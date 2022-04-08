@@ -21,11 +21,14 @@ const campgroundRouter = require('./routes/campgroundRouter')
 const reviewRouter = require('./routes/reviewRouter');
 const userRouter = require('./routes/userRouter');
 
-const dbURL = "mongodb+srv://first-user:UHXiZfWXRv1FY6xB@cluster0.go7g6.mongodb.net/yelpcamp?retryWrites=true&w=majority; //'mongodb://localhost:27017/yelpcamp'";
+const dbURL = process.env.DB_URL;
 //connet to mongo
 main().catch(err => console.log(err));
 async function main() {
-    await mongoose.connect(dbURL, { useNewUrlParser: true });
+    await mongoose.connect(dbURL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 }
 
 //setting session
