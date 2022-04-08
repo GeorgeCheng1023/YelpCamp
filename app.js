@@ -26,8 +26,7 @@ const dbURL = process.env.DB_URL;
 main().catch(err => console.log(err));
 async function main() {
     await mongoose.connect(dbURL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
+        useNewUrlParser: true
     });
 }
 
