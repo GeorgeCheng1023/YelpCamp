@@ -1,0 +1,31 @@
+<% layout('./layouts/boilerplate')%>
+
+    <h1 class="text-center">Add new Campground</h1>
+    <div class="col-6 offset-3">
+        <form class="needs-validation nonvalidate" action="/campgrounds" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="campground[location]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="doller">$</span>
+                    <input class="form-control" type="text" id="price" placeholder="0" name="campground[price]" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload image</label>
+                <input class="form-control" type="file" id="image" name="campground[images]" multiple>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-success">Submit</button>
+                <a class="btn btn-warning" href="/campgrounds">Cancel</a></footer>
+            </div>
+        </form>
+    </div>
